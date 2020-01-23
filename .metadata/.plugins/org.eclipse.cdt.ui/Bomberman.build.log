@@ -1,0 +1,22 @@
+17:37:25 **** Incremental Build of configuration Nios II for project Bomberman ****
+make all 
+Info: Building ../Bomberman_bsp/
+E:/Quartus_FPGA_Design/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../Bomberman_bsp/
+[BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../Bomberman_bsp//HAL/inc -I../Bomberman_bsp/ -I../Bomberman_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/main.o main.c
+In file included from main.c:8:0:
+./header_file/game.h:33:13: warning: 'shuffle' defined but not used [-Wunused-function]
+ static void shuffle(int *array, int N){
+             ^
+Info: Linking Bomberman.elf
+nios2-elf-g++  -T'../Bomberman_bsp//linker.x' -msys-crt0='../Bomberman_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../Bomberman_bsp/   -Wl,-Map=Bomberman.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o Bomberman.elf obj/default/INIT.o obj/default/LEDandHEX.o obj/default/USB_Keyboard_Driver.o obj/default/USB_Keyboard_Driver_Sup/io_handler.o obj/default/USB_Keyboard_Driver_Sup/usb.o obj/default/audio_driver.o obj/default/coins.o obj/default/draw_driver.o obj/default/drawing.o obj/default/ed.o obj/default/game.o obj/default/main.o obj/default/op.o obj/default/readKey.o obj/default/transition.o -lm -msys-lib=m
+nios2-elf-insert Bomberman.elf --thread_model hal --cpu_name nios2_qsys_0 --qsys true --simulation_enabled false --id 0 --sidp 0x80010e8 --timestamp 1575761338 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name Bomberman --quartus_project_dir "E:/Hello_Desktop/ECE385/Final_Project/Bomberman_Project/Bomberman_Project_3_0/Bomberman_Project" --jdi ../..//output_files/Bomberman.jdi --sopcinfo E:/Hello_Desktop/ECE385/Final_Project/Bomberman_Project/Bomberman_Project_3_0/Bomberman_Project/software/Bomberman_bsp/../../Bomberman.sopcinfo
+Info: (Bomberman.elf) 122 KBytes program size (code + initialized data).
+Info:                 130942 KBytes free for stack + heap.
+Info: Creating Bomberman.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source Bomberman.elf >Bomberman.objdump
+[Bomberman build complete]
+
+17:37:44 Build Finished (took 19s.389ms)
+

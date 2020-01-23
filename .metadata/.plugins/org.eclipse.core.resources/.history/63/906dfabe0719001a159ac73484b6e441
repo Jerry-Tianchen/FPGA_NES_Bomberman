@@ -1,0 +1,29 @@
+/*
+ * transition.c
+ *
+ *  Created on: 2019Äê12ÔÂ7ÈÕ
+ *      Author: Jerry-H
+ */
+#include "./header_file/draw_driver.h"
+
+void begin_anim(){
+
+	//Draw Background
+	//Loop Column
+	for (int i = 0; i < 8; i++ ){
+		//Loop  Row
+		for (int z = 0; z < 6; z++){
+			draw_driver(i*80,z*80,(i+1)*80-1,(z+1)*80-1);
+		}
+	}
+
+	//Draw Character
+	draw_driver(player1_front0_x0,player1_front0_y0,player1_front0_x1,player1_front0_y1,307,227);
+
+
+
+
+
+
+}
+

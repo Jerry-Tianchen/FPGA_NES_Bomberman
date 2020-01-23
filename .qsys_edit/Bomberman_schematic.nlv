@@ -1,0 +1,66 @@
+# # File gsaved with Nlview version 6.3.8  2013-12-19 bk=1.2992 VDI=34 GEI=35
+# 
+preplace inst Bomberman.nios2_qsys_0.cpu -pg 1
+preplace inst Bomberman.avalon_blitter_0 -pg 1 -lvl 3 -y 1370
+preplace inst Bomberman.audio_bomb_active -pg 1 -lvl 3 -y 890
+preplace inst Bomberman.jtag_uart_0 -pg 1 -lvl 3 -y 1270
+preplace inst Bomberman.audio_back_vol -pg 1 -lvl 3 -y 30
+preplace inst Bomberman.audio_INIT -pg 1 -lvl 3 -y 330
+preplace inst Bomberman.player1Score0 -pg 1 -lvl 3 -y 230
+preplace inst Bomberman.otg_hpi_r -pg 1 -lvl 3 -y 2170
+preplace inst Bomberman.otg_hpi_address -pg 1 -lvl 3 -y 1470
+preplace inst Bomberman.player1Score1 -pg 1 -lvl 3 -y 430
+preplace inst Bomberman.audio_bomb_vol -pg 1 -lvl 3 -y 990
+preplace inst Bomberman.timer_0 -pg 1 -lvl 3 -y 1090
+preplace inst Bomberman.otg_hpi_data -pg 1 -lvl 3 -y 1870
+preplace inst Bomberman.otg_hpi_cs -pg 1 -lvl 3 -y 1570
+preplace inst Bomberman.timeScreen0 -pg 1 -lvl 3 -y 2270
+preplace inst Bomberman.otg_hpi_reset -pg 1 -lvl 3 -y 1970
+preplace inst Bomberman.nios2_qsys_0.clock_bridge -pg 1
+preplace inst Bomberman.timeScreen1 -pg 1 -lvl 3 -y 2370
+preplace inst Bomberman.otg_hpi_w -pg 1 -lvl 3 -y 2070
+preplace inst Bomberman.audio_INIT_F -pg 1 -lvl 3 -y 630
+preplace inst Bomberman -pg 1 -lvl 1 -y 40 -regy -20
+preplace inst Bomberman.timeScreen2 -pg 1 -lvl 3 -y 2470
+preplace inst Bomberman.sysid_qsys_0 -pg 1 -lvl 3 -y 1190
+preplace inst Bomberman.sdram_pll_audio_pll -pg 1 -lvl 3 -y 770
+preplace inst Bomberman.nios2_qsys_0 -pg 1 -lvl 2 -y 1040
+preplace inst Bomberman.audio_select -pg 1 -lvl 3 -y 130
+preplace inst Bomberman.player2Score0 -pg 1 -lvl 3 -y 1670
+preplace inst Bomberman.nios2_qsys_0.reset_bridge -pg 1
+preplace inst Bomberman.player2Score1 -pg 1 -lvl 3 -y 1770
+preplace inst Bomberman.LEDs -pg 1 -lvl 3 -y 530
+preplace inst Bomberman.sdram -pg 1 -lvl 4 -y 810
+preplace inst Bomberman.clk_0 -pg 1 -lvl 1 -y 950
+preplace netloc POINT_TO_POINT<net_container>Bomberman</net_container>(MASTER)sdram_pll_audio_pll.c0,(SLAVE)sdram.clk) 1 3 1 1110
+preplace netloc EXPORT<net_container>Bomberman</net_container>(SLAVE)Bomberman.timescreen1_wire,(SLAVE)timeScreen1.external_connection) 1 0 3 NJ 2400 NJ 2400 NJ
+preplace netloc EXPORT<net_container>Bomberman</net_container>(SLAVE)Bomberman.otg_hpi_reset,(SLAVE)otg_hpi_reset.external_connection) 1 0 3 NJ 2000 NJ 2000 NJ
+preplace netloc EXPORT<net_container>Bomberman</net_container>(SLAVE)otg_hpi_data.external_connection,(SLAVE)Bomberman.otg_hpi_data) 1 0 3 NJ 1900 NJ 1900 NJ
+preplace netloc EXPORT<net_container>Bomberman</net_container>(SLAVE)player2Score0.external_connection,(SLAVE)Bomberman.player2score0_wire) 1 0 3 NJ 1700 NJ 1700 NJ
+preplace netloc FAN_OUT<net_container>Bomberman</net_container>(SLAVE)otg_hpi_data.clk,(MASTER)clk_0.clk,(SLAVE)player2Score0.clk,(SLAVE)audio_select.clk,(SLAVE)avalon_blitter_0.clk,(SLAVE)jtag_uart_0.clk,(SLAVE)otg_hpi_r.clk,(SLAVE)player1Score1.clk,(SLAVE)player2Score1.clk,(SLAVE)audio_INIT.clk,(SLAVE)LEDs.clk,(SLAVE)sysid_qsys_0.clk,(SLAVE)otg_hpi_w.clk,(SLAVE)sdram_pll_audio_pll.inclk_interface,(SLAVE)otg_hpi_cs.clk,(SLAVE)timer_0.clk,(SLAVE)otg_hpi_reset.clk,(SLAVE)nios2_qsys_0.clk,(SLAVE)audio_bomb_vol.clk,(SLAVE)timeScreen1.clk,(SLAVE)audio_back_vol.clk,(SLAVE)player1Score0.clk,(SLAVE)audio_bomb_active.clk,(SLAVE)otg_hpi_address.clk,(SLAVE)audio_INIT_F.clk,(SLAVE)timeScreen2.clk,(SLAVE)timeScreen0.clk) 1 1 2 350 960 790
+preplace netloc EXPORT<net_container>Bomberman</net_container>(SLAVE)Bomberman.reset,(SLAVE)clk_0.clk_in_reset) 1 0 1 NJ
+preplace netloc EXPORT<net_container>Bomberman</net_container>(SLAVE)otg_hpi_cs.external_connection,(SLAVE)Bomberman.otg_hpi_cs) 1 0 3 NJ 1600 NJ 1600 NJ
+preplace netloc EXPORT<net_container>Bomberman</net_container>(SLAVE)Bomberman.player1score0_wire,(SLAVE)player1Score0.external_connection) 1 0 3 NJ 260 NJ 260 NJ
+preplace netloc EXPORT<net_container>Bomberman</net_container>(SLAVE)otg_hpi_r.external_connection,(SLAVE)Bomberman.otg_hpi_r) 1 0 3 NJ 2200 NJ 2200 NJ
+preplace netloc EXPORT<net_container>Bomberman</net_container>(SLAVE)Bomberman.audio_init_f,(SLAVE)audio_INIT_F.external_connection) 1 0 3 NJ 660 NJ 660 NJ
+preplace netloc FAN_OUT<net_container>Bomberman</net_container>(MASTER)nios2_qsys_0.irq,(SLAVE)jtag_uart_0.irq,(SLAVE)timer_0.irq) 1 2 1 830
+preplace netloc EXPORT<net_container>Bomberman</net_container>(MASTER)Bomberman.sdram_pll,(MASTER)sdram_pll_audio_pll.c1) 1 3 2 NJ 800 NJ
+preplace netloc EXPORT<net_container>Bomberman</net_container>(SLAVE)otg_hpi_w.external_connection,(SLAVE)Bomberman.otg_hpi_w) 1 0 3 NJ 2100 NJ 2100 NJ
+preplace netloc EXPORT<net_container>Bomberman</net_container>(SLAVE)otg_hpi_address.external_connection,(SLAVE)Bomberman.otg_hpi_address) 1 0 3 NJ 1500 NJ 1500 NJ
+preplace netloc EXPORT<net_container>Bomberman</net_container>(SLAVE)player2Score1.external_connection,(SLAVE)Bomberman.player2score1_wire) 1 0 3 NJ 1800 NJ 1800 NJ
+preplace netloc EXPORT<net_container>Bomberman</net_container>(SLAVE)audio_select.external_connection,(SLAVE)Bomberman.audio_select) 1 0 3 NJ 160 NJ 160 NJ
+preplace netloc EXPORT<net_container>Bomberman</net_container>(SLAVE)avalon_blitter_0.Export,(SLAVE)Bomberman.export_data) 1 0 3 NJ 1380 NJ 1380 NJ
+preplace netloc EXPORT<net_container>Bomberman</net_container>(SLAVE)audio_bomb_vol.external_connection,(SLAVE)Bomberman.audio_bomb_vol) 1 0 3 NJ 940 NJ 940 NJ
+preplace netloc INTERCONNECT<net_container>Bomberman</net_container>(SLAVE)jtag_uart_0.avalon_jtag_slave,(SLAVE)timeScreen0.s1,(SLAVE)player1Score0.s1,(SLAVE)audio_back_vol.s1,(SLAVE)timer_0.s1,(SLAVE)timeScreen1.s1,(SLAVE)otg_hpi_data.s1,(SLAVE)audio_INIT_F.s1,(SLAVE)avalon_blitter_0.s1,(SLAVE)otg_hpi_address.s1,(SLAVE)audio_bomb_active.s1,(MASTER)nios2_qsys_0.instruction_master,(SLAVE)sysid_qsys_0.control_slave,(SLAVE)otg_hpi_cs.s1,(SLAVE)audio_INIT.s1,(SLAVE)LEDs.s1,(SLAVE)timeScreen2.s1,(SLAVE)otg_hpi_reset.s1,(SLAVE)audio_select.s1,(SLAVE)player2Score0.s1,(SLAVE)player2Score1.s1,(SLAVE)otg_hpi_w.s1,(SLAVE)audio_bomb_vol.s1,(SLAVE)player1Score1.s1,(MASTER)nios2_qsys_0.data_master,(SLAVE)otg_hpi_r.s1,(SLAVE)sdram_pll_audio_pll.pll_slave,(SLAVE)sdram.s1,(SLAVE)nios2_qsys_0.debug_mem_slave) 1 1 3 370 1000 810 760 1090
+preplace netloc EXPORT<net_container>Bomberman</net_container>(SLAVE)Bomberman.audio_back_vol,(SLAVE)audio_back_vol.external_connection) 1 0 3 NJ 60 NJ 60 NJ
+preplace netloc EXPORT<net_container>Bomberman</net_container>(SLAVE)Bomberman.player1score1_wire,(SLAVE)player1Score1.external_connection) 1 0 3 NJ 380 NJ 380 NJ
+preplace netloc EXPORT<net_container>Bomberman</net_container>(SLAVE)clk_0.clk_in,(SLAVE)Bomberman.clk) 1 0 1 NJ
+preplace netloc EXPORT<net_container>Bomberman</net_container>(SLAVE)audio_INIT.external_connection,(SLAVE)Bomberman.audio_init) 1 0 3 NJ 360 NJ 360 NJ
+preplace netloc EXPORT<net_container>Bomberman</net_container>(SLAVE)Bomberman.timescreen2_wire,(SLAVE)timeScreen2.external_connection) 1 0 3 NJ 2500 NJ 2500 NJ
+preplace netloc EXPORT<net_container>Bomberman</net_container>(SLAVE)Bomberman.sdram_wire,(SLAVE)sdram.wire) 1 0 4 NJ 880 NJ 880 NJ 880 NJ
+preplace netloc INTERCONNECT<net_container>Bomberman</net_container>(SLAVE)audio_INIT_F.reset,(SLAVE)timeScreen1.reset,(SLAVE)player1Score1.reset,(SLAVE)sdram.reset,(MASTER)clk_0.clk_reset,(SLAVE)player1Score0.reset,(MASTER)nios2_qsys_0.debug_reset_request,(SLAVE)sysid_qsys_0.reset,(SLAVE)otg_hpi_w.reset,(SLAVE)avalon_blitter_0.RESET,(SLAVE)timer_0.reset,(SLAVE)timeScreen0.reset,(SLAVE)audio_back_vol.reset,(SLAVE)otg_hpi_cs.reset,(SLAVE)player2Score1.reset,(SLAVE)audio_select.reset,(SLAVE)audio_bomb_active.reset,(SLAVE)otg_hpi_r.reset,(SLAVE)audio_INIT.reset,(SLAVE)sdram_pll_audio_pll.inclk_interface_reset,(SLAVE)otg_hpi_data.reset,(SLAVE)audio_bomb_vol.reset,(SLAVE)LEDs.reset,(SLAVE)otg_hpi_reset.reset,(SLAVE)nios2_qsys_0.reset,(SLAVE)timeScreen2.reset,(SLAVE)jtag_uart_0.reset,(SLAVE)otg_hpi_address.reset,(SLAVE)player2Score0.reset) 1 1 3 330 980 770 740 1130
+preplace netloc EXPORT<net_container>Bomberman</net_container>(SLAVE)timeScreen0.external_connection,(SLAVE)Bomberman.timescreen0_wire) 1 0 3 NJ 2300 NJ 2300 NJ
+preplace netloc EXPORT<net_container>Bomberman</net_container>(SLAVE)Bomberman.led_wire,(SLAVE)LEDs.external_connection) 1 0 3 NJ 560 NJ 560 NJ
+preplace netloc EXPORT<net_container>Bomberman</net_container>(SLAVE)audio_bomb_active.external_connection,(SLAVE)Bomberman.audio_bomb_active) 1 0 3 NJ 920 NJ 920 NJ
+levelinfo -pg 1 0 120 1410
+levelinfo -hier Bomberman 130 160 510 900 1240 1320

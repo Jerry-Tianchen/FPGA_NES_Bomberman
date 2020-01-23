@@ -1,0 +1,78 @@
+/*
+ * main.c
+ *
+ *  Created on: 11-07/2019
+ *      Author: Jerry Wang
+ */
+
+#include "./header_file/game.h"
+#include "./header_file/draw_driver.h"
+#include "./header_file/USB_Keyboard_Driver.h"
+#include "./header_file/audio_driver.h"
+#include "./header_file/LEDandHEX.h"
+
+
+unsigned int keycode[6];
+int L1 = 1000;
+int L2 = 2;
+int i = 0;
+
+volatile unsigned int * BIZ = (unsigned int *) 0x08001000;
+
+int main(){
+
+//	delay(5000);
+	Audio_init();
+	draw_driver_init();
+
+	changeBackVolume(1);
+
+//	draw_driver(0,0,639,479,0,0,0);
+//	draw_driver(player1_front0_x0,player1_front0_y0,player1_front0_x1,player1_front0_y1,10,10,1);
+//
+//	char i;
+//
+//	delay(3000);
+//	Audio_Select('1');
+//	delay(5000);
+//	Audio_Select('2');
+//	delay(4000);
+	Bomb();
+//	delay(25000);
+//	Audio_Select('w');
+//	delay(10000);
+//	Audio_Select('1');
+
+
+
+
+
+
+
+
+//	Keyboard_INIT();
+//
+//    //opening
+//	*player1Score1 = 1;
+//	*player1Score0 = 2;
+//	*player2Score1 = 9;
+//	*player2Score0 = 8;
+//
+//	*timeScreen2 = 7;
+//	*timeScreen1 = 6;
+//	*timeScreen0 = 5;
+//    //gaming
+//	initStage();
+//	int ending = 0;
+//    initPlayer();
+//	while (1){
+//			FetchKey(keycode);
+//			ending = game(keycode);
+//			if(ending){break;}
+//	}
+
+	//ending
+
+}
+
+

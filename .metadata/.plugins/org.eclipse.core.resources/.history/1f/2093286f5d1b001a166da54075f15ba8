@@ -1,0 +1,48 @@
+#include "./header_file/op.h"
+
+void initOP(){
+	*player1Score1 = 0;
+	*player1Score0 = 0;
+	*player2Score1 = 0;
+	*player2Score0 = 0;
+	*timeScreen2 = 3;
+	*timeScreen1 = 0;
+	*timeScreen0 = 0;
+	draw_driver(0,0,639,479,0,0,2);
+	Audio_Select('o');
+	changeBackVolume(2);
+}
+
+int op(unsigned int keycode[],unsigned int counter){
+
+	if(PLUS_en){
+		vol = (vol == 8) ? 8:vol + 1;
+		chnageBackVolume(vol);
+	}
+	if(MINOR_en){
+		vol = (vol == 0) ? 0:vol - 1;
+		chnageBackVolume(vol);
+	}
+	if(NINE_en){
+		B_vol = (B_vol == 8) ? 8:B_vol + 1;
+		chnageBombVolume(B_vol);
+		Bomb();
+
+	}
+	if(ZERO_en){
+		B_vol = (B_vol == 0) ? 0:B_vol - 1;
+		chnageBombVolume(B_vol);
+		Bomb();
+
+	}
+
+	if(counter%400==0){
+		draw_driver(PETS_x0,PETS_y0,PETS_x1,PETS_y1,270,300,1);
+	}
+	if(counter%400==200){
+		draw_driver(270,300,545,324,270,300,2);
+	}
+	if(ENTER_en(keycode)){return 1;}
+	else{return 0;}
+}
+
